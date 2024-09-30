@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageSelectorComponent } from '../../components/language-selector/language-selector.component';
 
 @Component({
   selector: 'app-basic-plan',
@@ -9,7 +10,8 @@ import { RouterLink } from '@angular/router';
   imports: [
     CommonModule,
     RouterLink,
-    LanguageSelectorComponent
+    LanguageSelectorComponent,
+    TranslateModule,
   ],
   templateUrl: './basic-plan.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush

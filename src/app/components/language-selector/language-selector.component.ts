@@ -1,10 +1,13 @@
 import { Component, inject, signal } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from '../../service/language.service';
 
 @Component({
   selector: 'language-selector',
   standalone: true,
-  imports: [],
+  imports: [
+    TranslateModule
+  ],
   templateUrl: './language-selector.component.html',
   styles: ``
 })
