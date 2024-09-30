@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { LanguageService } from '../../service/language.service';
 
 @Component({
   selector: 'language-selector',
@@ -15,5 +16,14 @@ export class LanguageSelectorComponent {
     { code: 'fr', flag: '🇫🇷' },
     { code: 'it', flag: '🇮🇹' },
   ]);
+
+  public languageService = inject(LanguageService);
+
+  public changeLanguage(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    const lang = target.value;
+
+    this.languageService.changeLang(lang);
+  }
 
 }
